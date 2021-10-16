@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="S.MobNFe.PrincipalPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" Orientation="Horizontal" BackgroundColor="#287041" HeightRequest="50">
+                    <Label Text="S.NF-e" TextColor="White" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" Margin="10,10,0,10"/>
+                </StackLayout>
+                <!--<StackLayout Grid.Row="1" IsVisible="true">
+                    <ListView x:Name="listTelas" SelectedItem="MenuLateral" ItemTapped="listTelas_ItemTapped">
+                        <ListView.Header>
+                            <Label Text="Controle de Pragas" FontAttributes="Bold" Margin="10"/>
+                        </ListView.Header>
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Ínicio</x:String>
+                                <x:String>Novo Boletim</x:String>
+                            </x:Array>
+                        </ListView.ItemsSource>
+                    </ListView>
+                </StackLayout>-->
+                <StackLayout Grid.Row="3" VerticalOptions="End" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button CornerRadius="5" IsEnabled="true" Grid.Column="0" BackgroundColor="LightGray" ImageSource="autorenew.png" ContentLayout="Top,0" Text="Atualizar" FontSize="Micro" Command="{Binding Atualizar}"/>
+                        <Button CornerRadius="5" IsEnabled="{Binding IsEnabledModulos}" Grid.Column="1" BackgroundColor="LightGray" ImageSource="warehouse.png" ContentLayout="Top,0" Text="Módulos" FontSize="Micro" Command="{Binding MudarLocal}"/>
+                        <Button CornerRadius="5" IsEnabled="true" Grid.Column="2" BackgroundColor="LightGray" ImageSource="logout.png" ContentLayout="Top,0" Text="Sair" FontSize="Micro" TextColor="#C62828" Command="{Binding Sair}"/>
+                    </Grid>
+                </StackLayout>
+
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
